@@ -1,25 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter as Router,Link,Switch,Route} from "react-router-dom"
+import {store,history} from './Redux/store'
+import { Provider } from 'react-redux'
+import MainApp from './Components/MainApp'
+import './index.css'
+import RefTest from './Components/RefTest'
 
 function App() {
+  console.log("History", history);
+  console.log("Store",store);
+  console.log("entered in Appppp");
+  
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+             <div className="main-container">
+              <Router history={history} >
+                  <Route  path = "/"  component = {MainApp}></Route>
+              </Router>
+             </div>
+    </Provider>
   );
 }
 
