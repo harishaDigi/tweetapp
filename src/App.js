@@ -8,9 +8,7 @@ import RefTest from './Components/RefTest'
 
 function App() {
   console.log("History", history);
-  console.log("Store",store);
-  console.log("entered in Appppp");
-  
+  console.log("Store",store);  
   
   return (
     <Provider store={store}>
